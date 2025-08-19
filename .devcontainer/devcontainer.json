@@ -1,0 +1,77 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb"
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "",
+  "postCreateCommand": "./.devcontainer/code_space.sh",
+  "postAttachCommand": {
+  },
+  "customizations": {
+    "codespaces": {
+      "vscode": {
+        "extensions": [
+          "DavidAnson.vscode-markdownlint",
+          "GitHub.codespaces",
+          "GitHub.github-vscode-theme",
+          "GitHub.vscode-pull-request-github",
+          "hashicorp.terraform",
+          "ms-azuretools.vscode-docker",
+          "redhat.vscode-yaml"
+        ]
+      }
+    },
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "GitHub.codespaces",
+        "GitHub.github-vscode-theme",
+        "GitHub.vscode-pull-request-github",
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "ms-python.python"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Grafana",
+      "onAutoForward": "notify"
+    },
+    "3002": {
+      "label": "WireShark"
+    },
+    "6379": {
+      "label": "Redis",
+      "onAutoForward": "notify"
+    },
+    "8081": {
+      "label": "C-Advisor",
+      "onAutoForward": "notify"
+    },
+    "8080":{
+      "label": "ACT",
+      "onAutoForward": "notify"
+    },
+    "8200": {
+      "label": "Vault",
+      "onAutoForward": "notify"
+    },
+    "9090": {
+      "label": "Prometheus",
+      "onAutoForward": "notify"
+    },
+    "9100": {
+      "label": "Node Exporter",
+      "onAutoForward": "notify"
+    },
+    "5000":{
+      "label": "Docker Registry",
+      "onAutoForward": "notify"
+    }
+  },
+  "forwardPorts": [3000,3002,9100,9090,8081,6379,8200,5000]
+}
