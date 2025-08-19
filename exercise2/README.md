@@ -2,41 +2,22 @@
 
 Back to [Main](../README.md)
 
-This exercise is meant to test your ability to run basic
- docker commands and troubleshoot issues with containers.
+This exercise is meant to test your basic abilities at problem solving by scripting.
 
-## Step 1 Initialize Workspace
+## Get instructions
 
-+ Build a container:
-  + Using the Dockerfile, build a container named `hello`.
+1. View the [Script_Instructions.md](Script_Instructions.md) for scripting exercises.
 
-+ Run the docker image
+## Complete Scripting exercises
 
-+ Enter the running container with with an interactive `/bin/bash` shell.
-  + You should see something like
+All the tools, commands, and libraries are present to complete the
+exercises using `Python` or `bash` from CodeSpace.
 
-      ```shell
-        bonkey@c0700134dc42:/exercises#
-      ```
+You have 15 minutes to complete both of the following exercises.
 
-+ CD to `~`
-  + Create a `test.sh` script that outputs "hello"
-  + Run the script.
+1. Complete scripting exercise 1.
+2. Complete scripting exercise 2.
 
-+ Exit and stop the container.
+## Exercise 3 complete
 
-## Step 2 Docker Compose debug, execute, and test
-
-+ Run docker compose and fix any errors you encounter.
-+ Curl the `/hello` endpoint on both containers.
-  + output should look like follows
-
-    ```shell
-    {
-      "data": "Hello World"
-    }
-    ```
-
-## Exercise 2 complete
-
-Proceed to [exercise 3](../exercise3/README.md)
+Proceed to [Exercise 4](../exercise4/README.md)

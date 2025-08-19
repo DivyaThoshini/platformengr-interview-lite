@@ -2,39 +2,41 @@
 
 Back to [Main](../README.md)
 
-## Step 1: Initialize and apply existing TF resources
+This exercise is meant to test your ability to run basic
+ docker commands and troubleshoot issues with containers.
 
-Init, plan, and apply the current terraform code in this directory.
- This should create 3 separate text files in the current directory.
+## Step 1 Initialize Workspace
 
-## Step 2: Move resource from one module to another
++ Build a container:
+  + Using the Dockerfile, build a container named `hello`.
 
-Move the `file2` resource from [module 1](../modules/module1/) to
- [module 2](../modules/module2/).  Do this in a way that when you
- run terraform apply again you DO NOT recreate any files or anything.
++ Run the docker image
 
-## Step 3: Run TF Plan and validate no changes
++ Enter the running container with with an interactive `/bin/bash` shell.
+  + You should see something like
 
-When you re-run your terraform plan, the 3 files should remain untouched
- but we should be able to see that `file2.txt` is now created via module 2.
+      ```shell
+        bonkey@c0700134dc42:/exercises#
+      ```
 
-Expected output:
++ CD to `~`
+  + Create a `test.sh` script that outputs "hello"
+  + Run the script.
 
-```bash
-terraform apply
-module.m2.local_file.file2: Refreshing state... [id=6a23b0a0be4741283159cdf45b6814073415c47c]
-module.m1.local_file.file1: Refreshing state... [id=bcaa1563249780a80f62de4264a2347dec98ec48]
-module.m2.local_file.file3: Refreshing state... [id=41e5c0166e1d0a452b06bb7341ae669fea1a714b]
++ Exit and stop the container.
 
-No changes. Your infrastructure matches the configuration.
+## Step 2 Docker Compose debug, execute, and test
 
-Terraform has compared your real infrastructure against
- your configuration and found no differences, so no changes are needed.
++ Run docker compose and fix any errors you encounter.
++ Curl the `/hello` endpoint on both containers.
+  + output should look like follows
 
-Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+    ```shell
+    {
+      "data": "Hello World"
+    }
+    ```
 
-```
+## Exercise 2 complete
 
-## Exercise 1 complete
-
-Proceed to [Exercise 2](../exercise2/README.md)
+Proceed to [exercise 3](../exercise3/README.md)
