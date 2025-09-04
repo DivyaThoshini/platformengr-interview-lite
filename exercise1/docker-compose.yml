@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app1:
+      image: hello
+          container_name: app1
+	      ports:
+	            - "8081:80"
+
+		      app2:
+		          image: hello
+			      container_name: app2
+			          ports:
+				        - "8082:80"
