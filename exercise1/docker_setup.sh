@@ -26,10 +26,11 @@ if [ $? -ne 0 ]; then
 		echo "Running test.sh inside the container..."
 		docker exec hello_container bash -c "cd ~ && ./test.sh"
 
-		# 5. Stop and remove the container
-		echo "Stopping and removing container..."
+		# 5. Stop the container
+		echo "Stopping the container..."
 		docker stop hello_container
-		docker rm hello_container
+		#docker rm hello_container
+                exit
 
 		echo "Step 1 completed successfully!"
 
